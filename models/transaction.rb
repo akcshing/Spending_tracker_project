@@ -15,7 +15,8 @@ class Transaction
   def self.total
     transactions = self.all()
     transaction_amounts = transactions.map{|transaction| transaction.amount}
-
+    transactions_total = transaction_amounts.sum
+    return transactions_total
   end
 
   def save()

@@ -17,7 +17,7 @@ class TestTransaction < MiniTest::Test
   end
 
   def test_amount_total
-    assert_equal(20.00, Transaction.total)
+    assert_equal(20.00, Transaction.total) # actual uses database data
   end
 
 end
