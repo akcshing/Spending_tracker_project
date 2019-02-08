@@ -7,7 +7,7 @@ class Merchant
 
   def initialize( merchant )
     @id = merchant["id"].to_i if merchant["id"]
-    @name = name
+    @name = merchant["name"]
   end
 
   def save()
