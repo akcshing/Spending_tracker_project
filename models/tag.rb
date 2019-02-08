@@ -29,4 +29,9 @@ class Tag
     result = tags.map{|tag| Tag.new(tag)}
     return result
   end
+
+  def self.delete_all()
+    sql = "DELETE FROM tags"
+    SqlRunner.run(sql)
+  end
 end

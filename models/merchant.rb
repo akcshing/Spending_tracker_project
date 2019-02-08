@@ -22,6 +22,7 @@ class Merchant
     values = [@name]
     SqlRunner.run(sql, values)
   end
+
   def self.all()
     sql ="SELECT * FROM merchants"
     merchants = SqlRunner.run(sql)
@@ -29,4 +30,8 @@ class Merchant
     return result
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM merchants"
+    SqlRunner.run(sql)
+  end
 end
