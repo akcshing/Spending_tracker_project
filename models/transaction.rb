@@ -19,6 +19,12 @@ class Transaction
     @id = SqlRunner.run(sql, values).first["id"].to_i
   end
 
+  def update()
+    sql = "UPDATE transactions SET (amount, tag_id, merchant_id) = ($1, $2, $3)"
+    values = [@amount, @tag_id, @merchant_id]
+    SqlRunner.run(sql, values)
+  end
+
 
 
 end
