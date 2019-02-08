@@ -32,6 +32,14 @@ class Transaction
     return result
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM transactions WHERE id = $1"
+    values = [id]
+    transaction = SqlRunner.run(sql, values)
+    result = Transaction.new(transaction.first)
+    return result
+  end
+
   def self.delete_all()
     sql = "DELETE FROM transactions"
     SqlRunner.run(sql)
