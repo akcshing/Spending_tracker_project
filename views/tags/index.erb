@@ -3,7 +3,7 @@
 <table>
   <% @tags.each do |tag| %>
   <tr>
-    <td><%= tag.name %></td>
+    <td><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
   </tr>
   <% end %>
 </table>
