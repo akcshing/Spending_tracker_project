@@ -17,6 +17,11 @@ class Tag
     @id = SqlRunner.run(sql, values).first["id"].to_i
   end
 
+  def update()
+    sql = "UPDATE tags SET name = $1"
+    values = [@name]
+    SqlRunner.run(sql, values)
+  end
 
 
 end
