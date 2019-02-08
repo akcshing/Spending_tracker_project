@@ -38,5 +38,8 @@ require("pry")
 # transaction_3.save()
 # transaction_4.save()
 
+
 binding.pry
 nil
+
+# Tag.find(2).destroy

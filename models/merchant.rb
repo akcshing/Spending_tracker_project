@@ -42,4 +42,10 @@ class Merchant
     sql = "DELETE FROM merchants"
     SqlRunner.run(sql)
   end
+
+  def destroy
+    sql = "DELETE FROM merchant WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
 end
