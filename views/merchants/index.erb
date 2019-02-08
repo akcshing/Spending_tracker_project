@@ -1,1 +1,8 @@
-<h1>HELLO</h1>
+<h1>Merchants</h1>
+<table>
+  <% @merchants.each do |merchant| %>
+  <tr>
+    <td><%= merchant.name %></td>
+  </tr>
+  <% end %>
+</table>
