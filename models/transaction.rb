@@ -12,6 +12,12 @@ class Transaction
     @merchant_id = transaction["merchant_id"].to_i
   end
 
+  def self.total
+    transactions = self.all()
+    transaction_amounts = transactions.map{|transaction| transaction.amount}
+
+  end
+
   def save()
     sql = "INSERT INTO transactions (amount, tag_id, merchant_id)
     VALUES ($1, $2, $3) RETURNING *"
@@ -50,4 +56,6 @@ class Transaction
     values = [@id]
     SqlRunner.run(sql, values)
   end
+
+
 end
