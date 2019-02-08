@@ -2,4 +2,6 @@
 <%= @tag.name %>
 
 <a href="/tags/<%=@tag.id%>/edit">Edit</a>
-<a href="/tags">Delete</a>
+<form class="" action="/tags/<%= @tag.id %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
