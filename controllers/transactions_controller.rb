@@ -8,5 +8,9 @@ require("pry")
 
 get "/transactions" do
   @transactions = Transaction.all()
+  @transactions_total = Transaction.total()
   erb (:"transactions/index")
 end
+
+# binding.pry
+# nil
