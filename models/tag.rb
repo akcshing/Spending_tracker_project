@@ -6,7 +6,7 @@ class Tag
   attr_accessor :id, :name
 
   def initialize( tag )
-    @id = tag["id"].to_i if tag["id"]
+    @id = tag["id"].to_i
     @name = tag["name"]
   end
 
@@ -18,8 +18,8 @@ class Tag
   end
 
   def update()
-    sql = "UPDATE tags SET name = $1"
-    values = [@name]
+    sql = "UPDATE tags SET name = $1 WHERE id = $2"
+    values = [@name, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -1,0 +1,8 @@
+<h1>Tags</h1>
+Current Tag Name: <%= @tag.name %>
+<form class="" action="/tags/<%= @tag.id %>" method="post">
+  <label for="tag-name-field"> New Tag Name:
+    <input type="text" name="name" id = "tag-name-field">
+  </label>
+  <input type="submit" value="Update">
+</form>
