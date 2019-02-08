@@ -12,6 +12,13 @@ class Transaction
     @merchant_id = transaction["merchant_id"].to_i
   end
 
+  def save()
+    sql = "INSERT INTO transactions (amount, tag_id, merchant_id)
+    VALUES ($1, $2, $3) RETURNING *"
+    values = [@amount, @tag_id, @merchant_id]
+    @id = SqlRunner.run(sql, values).first["id"].to_i
+  end
+
 
 
 end
