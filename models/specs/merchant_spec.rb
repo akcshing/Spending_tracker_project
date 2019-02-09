@@ -37,6 +37,14 @@ class TestMerchant < MiniTest::Test
 
   def test_get_transactions_of_merchant
     assert_equal(2, @merchant_1.transactions.count)
+    assert_equal(1, @merchant_2.transactions.count)
+  end
+
+  def test_get_total
+    transaction = Transaction.new("amount" => 2.20, "tag_id"=>@tag_2.id, "merchant_id"=>@merchant_2.id)
+    transaction.save()
+    assert_equal(10.0, @merchant_2.total)
+    assert_equal(12.20, @merchant_1.total)
   end
 
 end
