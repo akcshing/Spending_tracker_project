@@ -15,11 +15,18 @@ class Transaction
     @time_stamp = transaction["time_stamp"] if transaction["time_stamp"]
   end
 
+
   def self.total
     transactions = self.all()
     transaction_amounts = transactions.map{|transaction| transaction.amount}
     transactions_total = transaction_amounts.sum
     return transactions_total
+  end
+
+  def self.sort_by_id()
+    all = self.all()
+    all_sorted = all.sort_by{|transaction| transaction.id }
+    return all_sorted
   end
 
   def tag()

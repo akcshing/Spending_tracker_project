@@ -30,11 +30,11 @@ class TestTransaction < MiniTest::Test
   end
 
   def teardown
-    # Tag.delete_all
-    # Merchant.delete_all
-    # Transaction.delete_all
+    Tag.delete_all
+    Merchant.delete_all
+    Transaction.delete_all
   end
-
+  
   def test_amount_total
     assert_equal(20.00, Transaction.total) # actual uses database data
   end
@@ -48,6 +48,11 @@ class TestTransaction < MiniTest::Test
     assert_equal(@merchant_1.id, @transaction_2.merchant.id)
     assert_equal("McDonalds", @transaction_2.merchant.name)
     # binding.pry
+  end
+
+  def test_sort_by_id
+    assert_equal(@transaction_1.id, Transaction.sort_by_id().first.id)
+    assert_equal(@transaction_3.id, Transaction.sort_by_id().reverse.first.id)
   end
 
 end
