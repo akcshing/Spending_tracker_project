@@ -6,7 +6,7 @@ require_relative("../merchant")
 require_relative("../../db/sqlrunner")
 require("pry")
 
-class TestTag < MiniTest::Test
+class TestMerchant < MiniTest::Test
 
   def setup
     @tag_1 = Tag.new("name"=>"Food")
@@ -35,14 +35,11 @@ class TestTag < MiniTest::Test
     Transaction.delete_all
   end
 
-  def test_get_transactions_of_tag
-    assert_equal(2, @tag_1.transactions.count)
+  def test_get_transactions_of_merchant
+    assert_equal(2, @merchant_1.transactions.count)
   end
 
-  def test_get_tag_transactions_total
-    assert_equal(12.20, @tag_1.total)
-  end
-end
+
 
 # binding.pry
 # nil
