@@ -1,6 +1,7 @@
 require("pry")
 require_relative("../db/sqlrunner.rb")
 require_relative("./tag.rb")
+require_relative("./merchant.rb")
 
 class Transaction
 
@@ -24,6 +25,11 @@ class Transaction
     #get tag object from transaction object's tag id
     tag = Tag.find(@tag_id)
     return tag
+  end
+
+  def merchant()
+    merchant = Merchant.find(@merchant_id)
+    return merchant
   end
 
   def save()
