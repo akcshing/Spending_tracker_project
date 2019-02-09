@@ -4,6 +4,7 @@ require_relative("../transaction")
 require_relative("../tag")
 require_relative("../merchant")
 require_relative("../../db/sqlrunner")
+require("pry")
 
 class TestTransaction < MiniTest::Test
 
@@ -29,9 +30,9 @@ class TestTransaction < MiniTest::Test
   end
 
   def teardown
-    Tag.delete_all
-    Merchant.delete_all
-    Transaction.delete_all
+    # Tag.delete_all
+    # Merchant.delete_all
+    # Transaction.delete_all
   end
 
   def test_amount_total
@@ -46,6 +47,10 @@ class TestTransaction < MiniTest::Test
   def test_get_merchant
     assert_equal(@merchant_1.id, @transaction_2.merchant.id)
     assert_equal("McDonalds", @transaction_2.merchant.name)
+    # binding.pry
   end
 
 end
+
+# binding.pry
+# nil

@@ -15,6 +15,7 @@
       <td><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
       <td><%= transaction.tag.name%></td>
       <td><%= transaction.merchant.name%></td>
+      <td><%= transaction.time_stamp %></td>
     </tr>
     <% end %>
   </table>
