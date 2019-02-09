@@ -24,7 +24,6 @@ class Transaction
     #get tag object from transaction object's tag id
     tag = Tag.find(@tag_id)
     return tag
-    binding.pry
   end
 
   def save()

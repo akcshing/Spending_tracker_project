@@ -43,4 +43,9 @@ class TestTransaction < MiniTest::Test
     assert_equal("Clothes", @transaction_3.tag.name)
   end
 
+  def test_get_merchant
+    assert_equal(@merchant_1.id, @transaction_2.merchant.id)
+    assert_equal("McDonalds", @transaction_2.merchant.name)
+  end
+
 end
