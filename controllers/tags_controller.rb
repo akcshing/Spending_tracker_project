@@ -23,6 +23,7 @@ end
 
 get "/tags/:id" do
   @tag = Tag.find(params["id"])
+  @tag_total = @tag.total
   erb (:"tags/show")
 end
 
