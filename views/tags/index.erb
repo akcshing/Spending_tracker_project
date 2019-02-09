@@ -4,6 +4,7 @@
   <% @tags.each do |tag| %>
   <tr>
     <td><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
+    <td><%= tag.total_spent %></td>
   </tr>
   <% end %>
 </table>

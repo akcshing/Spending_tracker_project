@@ -4,11 +4,18 @@ require_relative("./transaction.rb")
 
 class Tag
 
-  attr_accessor :id, :name
+  attr_accessor :id, :name, :total
 
   def initialize( tag )
     @id = tag["id"].to_i
     @name = tag["name"]
+    @total = 0
+  end
+
+  def self.sort_by_total # descending
+    tags = self.all()
+    tags_sorted = tags.sort_by{|tag|tag.total}
+    return tags_sorted.reverse
   end
 
   def transactions()
@@ -19,12 +26,15 @@ class Tag
     return result
   end
 
-  def total()
+  def total_spent() # inner join?
     transactions = self.transactions
     transactions_amount = transactions.map{|transaction| transaction.amount}
     transactions_total = transactions_amount.sum
-    return transactions_total
+    @total = transactions_total
+    return @total
   end
+
+  # CRUD BELOW
 
   def save()
     sql = "INSERT INTO tags (name)

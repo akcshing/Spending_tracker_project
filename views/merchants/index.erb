@@ -4,6 +4,8 @@
   <% @merchants.each do |merchant| %>
   <tr>
     <td><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
+    <td><%= merchant.total %></td>
   </tr>
+
   <% end %>
 </table>

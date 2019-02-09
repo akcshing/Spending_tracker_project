@@ -40,7 +40,11 @@ class TestTag < MiniTest::Test
   end
 
   def test_get_tag_transactions_total
-    assert_equal(12.20, @tag_1.total)
+    assert_equal(12.20, @tag_1.total_spent)
+  end
+
+  def test_sort_tags_by_total
+    assert_equal(@tag_1, Tag.sort_by_total.first)
   end
 end
 

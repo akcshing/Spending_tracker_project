@@ -7,7 +7,7 @@ also_reload("../models/*")
 require("pry")
 
 get "/tags" do
-  @tags = Tag.all()
+  @tags = Tag.sort_by_total
   erb (:"tags/index")
 end
 
