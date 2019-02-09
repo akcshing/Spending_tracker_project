@@ -18,6 +18,13 @@ class Merchant
     return result
   end
 
+  def total()
+    transactions = self.transactions
+    transactions_amount = transactions.map{|transaction| transaction.amount}
+    transactions_total = transactions_amount.sum
+    return transactions_total
+  end
+
   def save()
     sql = "INSERT INTO merchants (name)
     VALUES ($1) RETURNING *"
