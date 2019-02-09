@@ -39,7 +39,7 @@ class TestMerchant < MiniTest::Test
     assert_equal(2, @merchant_1.transactions.count)
   end
 
-
+end
 
 # binding.pry
 # nil
