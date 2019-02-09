@@ -1,5 +1,6 @@
 require("pry")
 require_relative("../db/sqlrunner.rb")
+require_relative("./transaction.rb")
 
 class Tag
 
@@ -8,6 +9,18 @@ class Tag
   def initialize( tag )
     @id = tag["id"].to_i
     @name = tag["name"]
+  end
+
+  def transactions()
+    sql = "SELECT * FROM transactions WHERE tag_id = $1"
+    values = [@id]
+    transactions = SqlRunner.run(sql, values)
+    result = transactions.map{|transaction| Transaction.new(transaction)}
+    return result
+  end
+
+  def total()
+
   end
 
   def save()
