@@ -7,7 +7,7 @@ also_reload("../models/*")
 require("pry")
 
 get "/transactions" do
-  @transactions = Transaction.all()
+  @transactions = Transaction.sort_by_id.reverse
   @transactions_total = Transaction.total()
   erb (:"transactions/index")
 end
