@@ -23,6 +23,7 @@ end
 
 get "/merchants/:id" do
   @merchant = Merchant.find(params["id"])
+  @merchant_total = @merchant.total
   erb (:"merchants/show")
 end
 
