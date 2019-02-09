@@ -24,5 +24,10 @@ post "/transactions" do
   redirect to "/transactions"
 end
 
+get "/transactions/:id" do
+  @transaction = Transaction.find(params["id"])
+  erb (:"transactions/show")
+end
+
 # binding.pry
 # nil
