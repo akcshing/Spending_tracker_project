@@ -19,6 +19,8 @@ class Transaction
     return transactions_total
   end
 
+  
+
   def save()
     sql = "INSERT INTO transactions (amount, tag_id, merchant_id)
     VALUES ($1, $2, $3) RETURNING *"
