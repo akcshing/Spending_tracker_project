@@ -1,5 +1,6 @@
 require("pry")
 require_relative("../db/sqlrunner.rb")
+require_relative("./tag.rb")
 
 class Transaction
 
@@ -19,7 +20,12 @@ class Transaction
     return transactions_total
   end
 
-  
+  def tag()
+    #get tag object from transaction object's tag id
+    tag = Tag.find(@tag_id)
+    return tag
+    binding.pry
+  end
 
   def save()
     sql = "INSERT INTO transactions (amount, tag_id, merchant_id)
