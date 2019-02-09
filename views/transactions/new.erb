@@ -1,0 +1,23 @@
+<h1>Transactions</h1>
+
+<form class="" action="/transactions" method="post">
+
+  <label for="transaction-amount-field"> Amount: £
+    <input type="number" step="0.01" name="amount" id = "transaction-amount-field">
+  </label>
+
+  <select class="" name="tag_id">
+    <% @tags.each do |tag| %>
+    <option value="<%= tag.id %>"><%= tag.name %></option>
+    <% end %>
+  </select>
+
+  <select class="" name="merchant_id">
+    <% @merchants.each do |merchant| %>
+    <option value="<%= merchant.id %>"><%= merchant.name %></option>
+    <% end %>
+  </select>
+
+  <button type="submit" name="button">Create</button>
+
+</form>
