@@ -42,5 +42,10 @@ post "/transactions/:id" do
   redirect to "/transactions"
 end
 
+post "/transactions/:id/delete" do
+  transaction = Transaction.find(params["id"])
+  transaction.destroy
+  redirect to "/transactions"
+end
 # binding.pry
 # nil
