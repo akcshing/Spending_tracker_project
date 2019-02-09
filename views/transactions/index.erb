@@ -13,8 +13,8 @@
     <% @transactions.each do |transaction| %>
     <tr>
       <td><%= transaction.amount%></td>
-      <td><%= transaction.tag_id%></td>
-      <td><%= transaction.merchant_id%></td>
+      <td><%= transaction.tag.name%></td>
+      <td><%= transaction.merchant.name%></td>
     </tr>
     <% end %>
   </table>
