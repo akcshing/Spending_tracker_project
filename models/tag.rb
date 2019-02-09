@@ -20,7 +20,10 @@ class Tag
   end
 
   def total()
-
+    transactions = self.transactions
+    transactions_amount = transactions.map{|transaction| transaction.amount}
+    transactions_total = transactions_amount.sum
+    return transactions_total
   end
 
   def save()

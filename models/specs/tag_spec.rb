@@ -39,6 +39,9 @@ class TestTransaction < MiniTest::Test
     assert_equal(2, @tag_1.transactions.count)
   end
 
+  def test_get_tag_transactions_total
+    assert_equal(12.20, @tag_1.total)
+  end
 end
 
 # binding.pry
