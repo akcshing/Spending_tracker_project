@@ -9,12 +9,13 @@ class Tag
   def initialize( tag )
     @id = tag["id"].to_i
     @name = tag["name"]
-    @total = 0
+    @total = 0    #only assigned when total_spent is called. (sort_by_total too)
   end
 
   def self.sort_by_total # descending
     tags = self.all()
-    tags_sorted = tags.sort_by{|tag|tag.total}
+    tags_totaled = tags.each{|tag| tag.total_spent}
+    tags_sorted = tags_totaled.sort_by{|tag|tag.total}
     return tags_sorted.reverse
   end
 
@@ -31,7 +32,7 @@ class Tag
     transactions_amount = transactions.map{|transaction| transaction.amount}
     transactions_total = transactions_amount.sum
     @total = transactions_total
-    return @total
+    return transactions_total
   end
 
   # CRUD BELOW
