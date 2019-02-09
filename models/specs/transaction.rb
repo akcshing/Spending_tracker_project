@@ -24,6 +24,12 @@ class TestTransaction < MiniTest::Test
     transaction_3.save()
   end
 
+  def teardown
+    Tag.delete_all
+    Merchant.delete_all
+    Transaction.delete_all
+  end
+
   def test_amount_total
     assert_equal(20.00, Transaction.total) # actual uses database data
   end
