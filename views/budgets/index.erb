@@ -1,0 +1,10 @@
+<h1>Budgets</h1>
+<a href="/budgets/new">Create</a>
+<table>
+  <% @budgets.each do |budget| %>
+  <tr>
+    <td><a href="/budgets/<%= budget.id %>"><%= BUDGET'S TAG OR TAG'S BUDGET? %></a></td>
+    <td><%= budget.amount %></td>
+  </tr>
+  <% end %>
+</table>

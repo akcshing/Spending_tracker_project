@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS budgets;
 
 CREATE TABLE budgets (
   id SERIAL4 PRIMARY KEY,
-  amount DECIMAL(5,2),
+  amount DECIMAL(8,2),
   time_frame VARCHAR(255) -- day / week / month
 );
 
@@ -29,7 +29,7 @@ CREATE TABLE merchants (
 
 CREATE TABLE transactions (
   id SERIAL4 PRIMARY KEY,
-  amount DECIMAL(5,2), -- 5 bytes, 2 decimal places
+  amount DECIMAL(8,2), -- 5 bytes, 2 decimal places
   merchant_id INT4 REFERENCES merchants(id) ON DELETE CASCADE,
   tag_id INT4 REFERENCES tags(id) ON DELETE CASCADE,
   time_stamp TIMESTAMP DEFAULT NOW()

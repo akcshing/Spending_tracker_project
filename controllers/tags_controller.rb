@@ -32,6 +32,12 @@ get "/tags/:id/edit" do
   erb(:"tags/edit")
 end
 
+get "/tags/:id/newtrans" do
+  @tag = Tag.find(params["id"])
+  @merchants = Merchant.all()
+  erb (:"tags/newtrans")
+end
+
 post "/tags/:id" do
   tag = Tag.new(params)
   tag.update
