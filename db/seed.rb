@@ -2,6 +2,7 @@ require_relative("../models/merchant")
 require_relative("../models/tag")
 require_relative("../models/transaction")
 require_relative("../models/budget.rb")
+require_relative("../models/budget_relation.rb")
 require("pry")
 
 budget_1 = Budget.new({"name"=>"Overall Budget", "amount"=>50.00, "time_frame"=>"week"})
@@ -46,6 +47,11 @@ transaction_2.save()
 transaction_3.save()
 transaction_4.save()
 
+main_budget_1 = Budget_relation.new({"budget_id"=> budget_1.id, "tag_id"=>tag_1.id})
+main_budget_2 = Budget_relation.new({"budget_id"=> budget_1.id, "tag_id"=>tag_2.id})
+
+main_budget_1.save()
+main_budget_2.save()
 
 binding.pry
 nil
