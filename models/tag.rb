@@ -14,7 +14,7 @@ class Tag
 
   def self.sort_by_total # descending
     tags = self.all()
-    tags_totaled = tags.each{|tag| tag.total_spent}
+    tags_totaled = tags.each{|tag| tag.total_spent} # important
     tags_sorted = tags_totaled.sort_by{|tag|tag.total}
     return tags_sorted.reverse
   end
