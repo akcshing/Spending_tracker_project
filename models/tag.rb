@@ -19,7 +19,7 @@ class Tag
     ON transactions.merchant_id = merchants.id
     WHERE transactions.tag_id = $1"
     values =[@id]
-    merchants = SqlRunner.run(sql, values).uniq
+    merchants = SqlRunner.run(sql, values).uniq   # removes duplicates, before becoming objects
     results = merchants.map{|merchant| Merchant.new(merchant)}
     return results
   end

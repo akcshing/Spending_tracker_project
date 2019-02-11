@@ -34,7 +34,7 @@ end
 
 get "/tags/:id/newtrans" do
   @tag = Tag.find(params["id"])
-  @merchants = Merchant.all()
+  @merchants = @tag.merchants
   erb (:"tags/newtrans")
 end
 
