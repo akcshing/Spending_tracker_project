@@ -1,7 +1,8 @@
 <h1>Merchants</h1>
-<form class="" action="/merchants" method="post">
+<form class="" action="/tags/newmerch" method="post">
   <label for="merchant-name-field"> Merchant:
     <input type="text" name="name" id = "merchant-name-field" required>
   </label>
+  <input type="hidden" name="tag_id" value="<%= @tag.id %>"> 
   <button type="submit" name="button">Create</button>
 </form>

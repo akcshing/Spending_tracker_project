@@ -22,13 +22,19 @@ post "/tags" do
 end
 
 get "/tags/:id/newmerch" do
+  @tag = Tag.find(params["id"])
   erb (:"tags/newmerch")
 end
 
-post "/tags/:id/newmerch" do
+post "/tags/newmerch" do   # wow that worked?
   @merchant = Merchant.new(params)
   @merchant.save()
-  redirect to "/tags/#{params["id"]}/newtrans"
+  Transaction.new({"tag_id"=>params["tag_id"], "merchant_id"=>@merchant.id}).save()
+  @tag = Tag.find(params["tag_id"])
+  @merchants = @tag.merchants
+  erb (:"tags/newtrans")
+
+  # redirect to "/tags/#{params["tag_id"]}/newtrans"   # REDIRECT TROUBLE
 end
 
 post "/tags/:id/newtrans" do
