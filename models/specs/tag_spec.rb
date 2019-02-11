@@ -48,8 +48,8 @@ class TestTag < MiniTest::Test
     assert_equal(@tag_1.id, Tag.sort_by_total.first.id)
   end
 
-  def test_add_budget_to_tag
-    @tag_1.add_budget()
+  def test_get_merchants
+    assert_equal(1, @tag_1.merchants.count)
   end
 
 end

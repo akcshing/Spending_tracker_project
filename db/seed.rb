@@ -37,6 +37,7 @@ transaction_1 = Transaction.new({"amount"=>5.80, "tag_id"=>tag_1.id, "merchant_i
 transaction_2 = Transaction.new({"amount"=>26.00, "tag_id"=>tag_2.id, "merchant_id"=>merchant_2.id})
 transaction_3 = Transaction.new({"amount"=>16.00, "tag_id"=>tag_2.id, "merchant_id"=>merchant_3.id})
 transaction_4 = Transaction.new({"amount"=>4.50, "tag_id"=>tag_1.id, "merchant_id"=>merchant_3.id})
+transaction_5 = Transaction.new({"amount"=>12.50, "tag_id"=>tag_1.id, "merchant_id"=>merchant_3.id})
 
 transaction_1.save()
 
@@ -47,6 +48,7 @@ transaction_1.update()
 transaction_2.save()
 transaction_3.save()
 transaction_4.save()
+transaction_5.save()
 
 # main_budget_1 = Budget_relation.new({"budget_id"=> budget_1.id, "tag_id"=>tag_1.id})
 # main_budget_2 = Budget_relation.new({"budget_id"=> budget_1.id, "tag_id"=>tag_2.id})

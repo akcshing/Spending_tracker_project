@@ -7,10 +7,21 @@ class Tag
   attr_accessor :id, :name, :budget_id, :total
 
   def initialize( tag )
-    @id = tag["id"].to_i 
+    @id = tag["id"].to_i
     @name = tag["name"]
     @budget_id = tag["budget_id"].to_i if tag["budget_id"]
     @total = 0    #only assigned when total_spent is called. (sort_by_total too)
+  end
+
+  def merchants
+    sql = "SELECT merchants.* FROM merchants
+    INNER JOIN transactions
+    ON transactions.merchant_id = merchants.id
+    WHERE transactions.tag_id = $1"
+    values =[@id]
+    merchants = SqlRunner.run(sql, values).uniq
+    results = merchants.map{|merchant| Merchant.new(merchant)}
+    return results
   end
 
 
