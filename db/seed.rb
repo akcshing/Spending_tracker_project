@@ -26,6 +26,7 @@ merchant_3.save()
 tag_1 = Tag.new({"name" => "Food"})
 tag_2 = Tag.new({"name" => "Clothes"})
 
+
 tag_1.save()
 tag_1.name = "Grub"
 tag_1.update()
@@ -52,6 +53,9 @@ transaction_4.save()
 #
 # main_budget_1.save()
 # main_budget_2.save()
+
+tag_2.budget_id = budget_1.id
+tag_2.update()
 
 binding.pry
 nil

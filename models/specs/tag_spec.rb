@@ -3,6 +3,7 @@ require("minitest/rg")
 require_relative("../transaction")
 require_relative("../tag")
 require_relative("../merchant")
+require_relative("../budget")
 require_relative("../../db/sqlrunner")
 require("pry")
 
@@ -44,8 +45,13 @@ class TestTag < MiniTest::Test
   end
 
   def test_sort_tags_by_total
-    assert_equal(@tag_1, Tag.sort_by_total.first)
+    assert_equal(@tag_1.id, Tag.sort_by_total.first.id)
   end
+
+  def test_add_budget_to_tag
+    @tag_1.add_budget()
+  end
+
 end
 
 # binding.pry

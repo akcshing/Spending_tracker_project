@@ -4,13 +4,15 @@ require_relative("./transaction.rb")
 
 class Tag
 
-  attr_accessor :id, :name, :total
+  attr_accessor :id, :name, :budget_id, :total
 
   def initialize( tag )
-    @id = tag["id"].to_i
+    @id = tag["id"].to_i 
     @name = tag["name"]
+    @budget_id = tag["budget_id"].to_i if tag["budget_id"]
     @total = 0    #only assigned when total_spent is called. (sort_by_total too)
   end
+
 
   def self.sort_by_total # descending
     tags = self.all()
