@@ -21,6 +21,23 @@ post "/tags" do
   redirect to "/tags"
 end
 
+get "/tags/:id/newmerch" do
+  erb (:"tags/newmerch")
+end
+
+post "/tags/:id/newmerch" do
+  @merchant = Merchant.new(params)
+  @merchant.save()
+  redirect to "/tags/#{params["id"]}/newtrans"
+end
+
+post "/tags/:id/newtrans" do
+  transaction = Transaction.new(params)
+  transaction.save()
+  redirect to "/transactions"
+end
+
+
 get "/tags/:id" do
   @tag = Tag.find(params["id"])
   @tag_total = @tag.total
@@ -37,6 +54,8 @@ get "/tags/:id/newtrans" do
   @merchants = @tag.merchants
   erb (:"tags/newtrans")
 end
+
+
 
 post "/tags/:id" do
   tag = Tag.new(params)
