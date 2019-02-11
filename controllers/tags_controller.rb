@@ -31,7 +31,7 @@ post "/tags/newmerch" do   # wow that worked?
   @merchant.save()
   Transaction.new({"tag_id"=>params["tag_id"], "merchant_id"=>@merchant.id}).save()
   @tag = Tag.find(params["tag_id"])
-  @merchants = @tag.merchants
+  @merchants = @tag.merchants.reverse
   erb (:"tags/newtrans")
 
   # redirect to "/tags/#{params["tag_id"]}/newtrans"   # REDIRECT TROUBLE
