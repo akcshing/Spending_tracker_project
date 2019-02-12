@@ -13,7 +13,7 @@ CREATE TABLE budgets (
 CREATE TABLE tags (
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  budget_id INT4 REFERENCES budgets(id) ON DELETE CASCADE
+  budget_id INT4 REFERENCES budgets(id)
 );
 
 CREATE TABLE merchants (

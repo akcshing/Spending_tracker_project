@@ -1,7 +1,11 @@
-<h1>Tags</h1>
+
 <h2><%= @tag.name %></h2>
-<h2><%= @tag.total_spent %></h2>
-<a href="/tags/<%=@tag.id%>/edit">Edit</a>
+<a href="/tags/<%=@tag.id%>/edit">Edit name</a>
+
+
+<h2>Spent:  <%= @tag.total_spent %></h2>
+<h2>Budget: <%= @tag.budget.amount %></h2>
+
 <form class="" action="/tags/<%= @tag.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>

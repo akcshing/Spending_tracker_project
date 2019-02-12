@@ -30,6 +30,10 @@ post "/budgets" do
     erb (:"budgets/index")
 end
 
+get "/budgets/overall/edit" do
+  erb (:"budgets/overall_edit")
+end
+
 get "/budgets/:id" do
   @budget = Budget.find(params["id"])
   erb (:"budgets/show")

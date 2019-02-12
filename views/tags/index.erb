@@ -5,7 +5,9 @@
   <tr>
     <td><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
     <td><%= tag.total_spent %></td>
+    <td><%=tag.budget.amount%></td>
     <td><a href="/tags/<%= tag.id %>/newtrans">Add new transaction from existing merchant</a></td>
+
   </tr>
   <% end %>
 </table>
