@@ -6,10 +6,10 @@
     <td><a href="/budgets/1">Overall Budget</a></td>
 <td><%=@overall_budget.amount%></td>
   </tr>
-  <% @budgets.each do |budget| %>
+  <% @tags.each do |tag| %>
   <tr>
-    <td><a href="/budgets/<%= budget.id %>"><%= budget.tag.name%></a></td>
-    <td><%= budget.amount %></td>
+    <td><a href="/budgets/<%= tag.id %>"><%= tag.name%></a></td>
+    <td><%= tag.budget.amount %></td>
   </tr>
   <% end %>
 </table>

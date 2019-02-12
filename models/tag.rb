@@ -24,6 +24,14 @@ class Tag
     return results
   end
 
+  def budget
+    sql = "SELECT * FROM budgets WHERE budgets.id = $1"
+    values = [@id]
+    budget = SqlRunner.run(sql, values)
+    result = Budget.new(budget.first)
+    return result
+  end
+
 
   def self.sort_by_total # descending
     tags = self.all()

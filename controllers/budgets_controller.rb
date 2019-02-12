@@ -9,7 +9,7 @@ require("pry")
 
 get "/budgets" do
   @overall_budget = Budget.find(1)
-  @budgets = Budget.tags
+  @tags = Budget.tags
   erb (:"budgets/index")
 end
 
