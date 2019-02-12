@@ -45,14 +45,14 @@ get "/budgets/:id/edit" do
   erb(:"budgets/edit")
 end
 
-post "/budgets/:id" do
-  budget = Budget.new(params)
-  budget.update
-  redirect to "/budgets"
-end
-
 post "/budgets/:id/delete" do
   budget = Budget.find(params["id"])
   budget.destroy
+  redirect to "/budgets"
+end
+
+post "/budgets/:id" do
+  budget = Budget.new(params)
+  budget.update
   redirect to "/budgets"
 end
