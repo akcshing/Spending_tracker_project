@@ -1,0 +1,7 @@
+<h1>Budgets</h1>
+<form class="" action="/budgets/<%= @budget.id %>" method="post">
+  <label for="budget-amount-field"> <%= @tag.name %>'s budget: £
+    <input type="number" step="0.01" name="amount" id = "budget-name-field" required>
+  </label>
+  <button type="submit" name="button">Update Budget</button>
+</form>

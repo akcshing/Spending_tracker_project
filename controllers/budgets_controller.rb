@@ -37,6 +37,7 @@ end
 
 get "/budgets/:id/edit" do
   @budget = Budget.find(params["id"])
+  @tag = @budget.tag
   erb(:"budgets/edit")
 end
 

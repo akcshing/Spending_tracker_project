@@ -12,7 +12,7 @@ class Budget
     @time_frame = budget["time_frame"] # must be "day", "week", or "month"
   end
 
-  def self.tags_no_budget 
+  def self.tags_no_budget
     sql = "SELECT * FROM tags WHERE tags.budget_id IS NULL"
     tags_no_budget = SqlRunner.run(sql)
     result = tags_no_budget.map{|tag|Tag.new(tag)}
@@ -30,7 +30,7 @@ class Budget
     sql = "SELECT * FROM tags WHERE tags.budget_id = $1"
     values = [@id]
     tag = SqlRunner.run(sql, values)
-    result = tag.first
+    result = Tag.new(tag.first)
     return result
   end
 
