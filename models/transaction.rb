@@ -25,7 +25,8 @@ class Transaction
 
   def self.sort_by_id()
     all = self.all()
-    all_sorted = all.sort_by{|transaction| transaction.id }
+    all_with_amounts = all.delete_if{|transaction| transaction.amount == 0}
+    all_sorted = all_with_amounts.sort_by{|transaction| transaction.id }
     return all_sorted
   end
 
