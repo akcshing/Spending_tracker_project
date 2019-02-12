@@ -7,12 +7,13 @@ also_reload("../models/*")
 require("pry")
 
 get "/transactions" do
+  @total = Transaction.total()
   @transactions = Transaction.sort_by_id.reverse
-  @transactions_total = Transaction.total()
   erb (:"transactions/index")
 end
 
 get "/transactions/new" do
+  @total = Transaction.total()
   @tags = Tag.all()
   @merchants = Merchant.all()
   erb (:"transactions/new")
@@ -25,11 +26,13 @@ post "/transactions" do
 end
 
 get "/transactions/:id" do
+  @total = Transaction.total()
   @transaction = Transaction.find(params["id"])
   erb (:"transactions/show")
 end
 
 get "/transactions/:id/edit" do
+  @total = Transaction.total()
   @transaction = Transaction.find(params["id"])
   @tags = Tag.all()
   @merchants = Merchant.all()
@@ -49,3 +52,12 @@ post "/transactions/:id/delete" do
 end
 # binding.pry
 # nil
+
+# <input list="tag_id" class="" name="tag_id" required>   # datalist rabbithole
+# <datalist id="tag_id" class="">
+#
+#   <% @tags.each do |tag| %>
+#   <option value="<%= tag.id %>"<%= tag.name %>>
+#   <% end %>
+#
+# </datalist>

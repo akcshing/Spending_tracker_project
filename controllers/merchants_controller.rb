@@ -7,11 +7,13 @@ also_reload("../models/*")
 require("pry")
 
 get "/merchants" do
+  @total = Transaction.total()
   @merchants = Merchant.all()
   erb (:"merchants/index")
 end
 
 get "/merchants/new" do
+  @total = Transaction.total()
   erb (:"merchants/new")
 end
 
@@ -22,12 +24,14 @@ post "/merchants" do
 end
 
 get "/merchants/:id" do
+  @total = Transaction.total()
   @merchant = Merchant.find(params["id"])
   @merchant_total = @merchant.total
   erb (:"merchants/show")
 end
 
 get "/merchants/:id/edit" do
+  @total = Transaction.total()
   @merchant = Merchant.find(params["id"])
   erb(:"merchants/edit")
 end
