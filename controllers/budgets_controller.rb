@@ -47,6 +47,9 @@ end
 
 post "/budgets/:id/delete" do
   budget = Budget.find(params["id"])
+  tag = budget.tag    # removing relation 
+  tag.budget_id = nil
+  tag.update()
   budget.destroy
   redirect to "/budgets"
 end
