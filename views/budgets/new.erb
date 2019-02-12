@@ -1,0 +1,14 @@
+<h1>Budgets</h1>
+<form class="" action="/budgets" method="post">
+  <label for="tag_id">Select a tag:
+    <select class="" name="tag_id">
+      <% @tags.each do |tag| %>
+      <option value="<%= tag.id %>"><%= tag.name %></option>
+      <% end %>
+    </select>
+  </label>
+  <label for="budget-amount-field"> £:
+    <input type="number" step="0.01" name="amount" id = "budget-name-field" required>
+  </label>
+  <button type="submit" name="button">Add Budget</button>
+</form>

@@ -14,12 +14,16 @@ get "/budgets" do
 end
 
 get "/budgets/new" do
+  @tags = Budget.tags_no_budget
   erb (:"budgets/new")
 end
 
 post "/budgets" do
   @budget = Budget.new(params)
   @budget.save
+  @tag = Tag.find(params["tag_id"])
+  @tag.budget_id = @budget.id
+  @tag.update()
   redirect to "/budgets"
 end
 

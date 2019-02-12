@@ -1,5 +1,6 @@
 require("pry")
 require_relative("../db/sqlrunner.rb")
+require_relative("./tag.rb")
 
 class Budget
 
@@ -9,6 +10,13 @@ class Budget
     @id = budget["id"].to_i if budget["id"]
     @amount = budget["amount"]
     @time_frame = budget["time_frame"] # must be "day", "week", or "month"
+  end
+
+  def self.tags_no_budget
+    sql = "SELECT * FROM tags WHERE tags.budget_id IS NULL"
+    tags_no_budget = SqlRunner.run(sql)
+    result = tags_no_budget.map{|tag|Tag.new(tag)}
+    return result
   end
 
   def self.tags
