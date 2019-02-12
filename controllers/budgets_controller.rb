@@ -10,6 +10,7 @@ require("pry")
 get "/budgets" do
   @overall_budget = Budget.find(1)
   @tags = Budget.tags
+  @total = Transaction.total
 
   erb (:"budgets/index")
 end
@@ -47,7 +48,7 @@ end
 
 post "/budgets/:id/delete" do
   budget = Budget.find(params["id"])
-  tag = budget.tag    # removing relation 
+  tag = budget.tag    # removing relation
   tag.budget_id = nil
   tag.update()
   budget.destroy

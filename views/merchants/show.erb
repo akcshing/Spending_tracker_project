@@ -1,6 +1,11 @@
 <h1>Merchants</h1>
 <h2><%= @merchant.name %></h2>
 <a href="/merchants/<%=@merchant.id%>/edit">Edit</a>
+
+<form class="" action="/merchants/<%= @merchant.id %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
+
 <h2><%= @merchant_total %></h2>
 
 
@@ -14,12 +19,8 @@
   <% @merchant_transactions.each do |transaction| %>
   <tr>
     <td><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
-    <td><%= transaction.tag.name%></td>
+    <td><a href="/tags/<%= transaction.tag.id %>"><%= transaction.tag.name%></a></td>
     <td><%= transaction.time_stamp %></td>
   </tr>
   <% end %>
 </table>
-
-<form class="" action="/merchants/<%= @merchant.id %>/delete" method="post">
-  <input type="submit" value="Delete">
-</form>

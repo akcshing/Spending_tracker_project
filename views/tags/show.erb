@@ -1,7 +1,9 @@
 
 <h2><%= @tag.name %></h2>
 <a href="/tags/<%=@tag.id%>/edit">Edit name</a>
-
+<form class="" action="/tags/<%= @tag.id %>/delete" method="post">
+  <input type="submit" value="Delete">
+</form>
 
 <h2>Spent:  <%= @tag.total_spent %></h2>
 
@@ -15,14 +17,8 @@
   <% @tag_transactions.each do |transaction| %>
   <tr>
     <td><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
-    <td><%= transaction.merchant.name%></td>
+    <td><a href="/merchants/<%= transaction.merchant.id %>"><%= transaction.merchant.name%></a></td>
     <td><%= transaction.time_stamp %></td>
   </tr>
   <% end %>
 </table>
-
-
-
-<form class="" action="/tags/<%= @tag.id %>/delete" method="post">
-  <input type="submit" value="Delete">
-</form>

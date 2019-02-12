@@ -1,15 +1,21 @@
 <h1>Budgets</h1>
-<a href="/budgets/new">New Budget</a>
+<a href="/budgets/new">Add New Budget</a>
 <table>
-
   <tr>
-    <td>Overall Budget</td>
+    <td></td>
+    <td>Spent</td>
+    <td>Budget</td>
+  </tr>
+  <tr>
+    <td>Total</td>
+    <td><%= @total %></td>
     <td><%=@overall_budget.amount%></td>
     <td><a href="/budgets/overall/edit">Change Overall Budget</a></td>
   </tr>
   <% @tags.each do |tag| %>
   <tr>
     <td><a href="/tags/<%= tag.id %>"><%= tag.name%></a></td>
+    <td><%= tag.total_spent %></td>
     <td><a href="/budgets/<%= tag.budget.id %>/edit"><%= tag.budget.amount %></a></td>
   </tr>
   <% end %>
