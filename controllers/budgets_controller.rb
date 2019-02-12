@@ -10,6 +10,7 @@ require("pry")
 get "/budgets" do
   @overall_budget = Budget.find(1)
   @tags = Budget.tags
+
   erb (:"budgets/index")
 end
 
@@ -24,7 +25,9 @@ post "/budgets" do
   @tag = Tag.find(params["tag_id"])
   @tag.budget_id = @budget.id
   @tag.update()
-  redirect to "/budgets"
+    @overall_budget = Budget.find(1)
+    @tags = Budget.tags
+    erb (:"budgets/index")
 end
 
 get "/budgets/:id" do

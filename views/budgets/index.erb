@@ -8,7 +8,7 @@
   </tr>
   <% @tags.each do |tag| %>
   <tr>
-    <td><a href="/budgets/<%= tag.id %>"><%= tag.name%></a></td>
+    <td><a href="/tags/<%= tag.id %>"><%= tag.name%></a></td>
     <td><%= tag.budget.amount %></td>
   </tr>
   <% end %>

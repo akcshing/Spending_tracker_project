@@ -26,7 +26,7 @@ class Tag
 
   def budget
     sql = "SELECT * FROM budgets WHERE budgets.id = $1"
-    values = [@id]
+    values = [@budget_id]
     budget = SqlRunner.run(sql, values)
     result = Budget.new(budget.first)
     return result
