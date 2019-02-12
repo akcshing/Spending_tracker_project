@@ -5,6 +5,23 @@
 
 <h2>Spent:  <%= @tag.total_spent %></h2>
 
+<h3>Transactions</h3>
+<table>
+  <tr>
+    <td>Amount</td>
+    <td>Merchant</td>
+    <td>Timestamp</td>
+  </tr>
+  <% @tag_transactions.each do |transaction| %>
+  <tr>
+    <td><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
+    <td><%= transaction.merchant.name%></td>
+    <td><%= transaction.time_stamp %></td>
+  </tr>
+  <% end %>
+</table>
+
+
 
 <form class="" action="/tags/<%= @tag.id %>/delete" method="post">
   <input type="submit" value="Delete">

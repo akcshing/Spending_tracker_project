@@ -51,6 +51,7 @@ get "/tags/:id" do
   @total = Transaction.total()
   @tag = Tag.find(params["id"])
   @tag_total = @tag.total
+  @tag_transactions = @tag.transactions
   erb (:"tags/show")
 end
 

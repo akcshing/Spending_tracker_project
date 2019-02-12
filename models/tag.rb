@@ -44,7 +44,8 @@ class Tag
     sql = "SELECT * FROM transactions WHERE tag_id = $1"
     values = [@id]
     transactions = SqlRunner.run(sql, values)
-    result = transactions.map{|transaction| Transaction.new(transaction)}
+    trans_objs = transactions.map{|transaction| Transaction.new(transaction)}
+    result = trans_objs.delete_if{|transaction| transaction.amount == 0}
     return result
   end
 
