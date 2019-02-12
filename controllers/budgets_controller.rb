@@ -8,7 +8,8 @@ also_reload("../models/*")
 require("pry")
 
 get "/budgets" do
-  @budgets = Budget.sort_by_total
+  @overall_budget = Budget.find(1)
+  @budgets = Budget.tags
   erb (:"budgets/index")
 end
 

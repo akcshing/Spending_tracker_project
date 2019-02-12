@@ -58,8 +58,8 @@ class Tag
   end
 
   def update()
-    sql = "UPDATE tags SET name = $1 WHERE id = $2"
-    values = [@name, @id]
+    sql = "UPDATE tags SET (name, budget_id) = ($1, $2) WHERE id = $3"
+    values = [@name, @budget_id, @id]
     SqlRunner.run(sql, values)
   end
 

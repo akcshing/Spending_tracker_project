@@ -11,6 +11,21 @@ class Budget
     @time_frame = budget["time_frame"] # must be "day", "week", or "month"
   end
 
+  def self.tags
+    sql = "SELECT * FROM tags WHERE tags.budget_id > 1"
+    tags = SqlRunner.run(sql)
+    result = tags.map{|tag| Tag.new(tag)}
+    return result
+  end
+
+  def tag
+    sql = "SELECT * FROM tags WHERE tags.budget_id = $1"
+    values = [@id]
+    tag = SqlRunner.run(sql, values)
+    result = tag.first
+    return result
+  end
+
   def save()
     sql = "INSERT INTO budgets (amount, time_frame)
     VALUES ($1, $2) RETURNING *"

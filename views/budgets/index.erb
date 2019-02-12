@@ -1,9 +1,14 @@
 <h1>Budgets</h1>
 <a href="/budgets/new">Create</a>
 <table>
+
+  <tr>
+    <td><a href="/budgets/1">Overall Budget</a></td>
+<td><%=@overall_budget.amount%></td>
+  </tr>
   <% @budgets.each do |budget| %>
   <tr>
-    <td><a href="/budgets/<%= budget.id %>"><%= BUDGET'S TAG OR TAG'S BUDGET? %></a></td>
+    <td><a href="/budgets/<%= budget.id %>"><%= budget.tag.name%></a></td>
     <td><%= budget.amount %></td>
   </tr>
   <% end %>

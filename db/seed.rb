@@ -5,6 +5,8 @@ require_relative("../models/budget.rb")
 # require_relative("../models/budget_relation.rb")
 require("pry")
 
+overall_budget = Budget.new({"amount"=>nil, "time_frame"=>nil})
+overall_budget.save
 budget_1 = Budget.new({"amount"=>50.00, "time_frame"=>"week"})
 budget_1.save()
 
@@ -50,16 +52,19 @@ transaction_3.save()
 transaction_4.save()
 transaction_5.save()
 
+tag_2.budget_id = budget_1.id
+tag_2.update()
+
+tag_1.budget_id = budget_1.id
+tag_1.update()
+
+binding.pry
+nil
+
+
 # main_budget_1 = Budget_relation.new({"budget_id"=> budget_1.id, "tag_id"=>tag_1.id})
 # main_budget_2 = Budget_relation.new({"budget_id"=> budget_1.id, "tag_id"=>tag_2.id})
 #
 # main_budget_1.save()
 # main_budget_2.save()
-
-tag_2.budget_id = budget_1.id
-tag_2.update()
-
-binding.pry
-nil
-
 # Tag.find(2).destroy
