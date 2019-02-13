@@ -13,8 +13,10 @@
     <header>
     </header>
 
-    <nav class="inline-block">
+    <nav class="inline-block centre">
       <ul>
+        <img id="logo" src="/images/logo.png" alt="logo">
+
       <a href="/tags"><li class="click">Tags</li></a>
       <a href="/merchants"><li class="click">Merchants</li></a>
       <a href="/transactions"><li class="click">Transactions</li></a>
@@ -25,7 +27,7 @@
     <main class="inline-block">
       <div id="layout_info" class="right">Total Spendings: <%= @total %></div>
       <div id="layout_info" class="right">Budget warnings:  </div>
-      
+
 
         <%= yield %>
 
