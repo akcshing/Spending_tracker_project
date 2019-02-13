@@ -1,5 +1,5 @@
 
-<h2><%= @tag.name %></h2>
+<h1><%= @tag.name %></h1>
 <a href="/tags/<%=@tag.id%>/edit">Edit name</a>
 <form class="" action="/tags/<%= @tag.id %>/delete" method="post">
   <input type="submit" value="Delete">

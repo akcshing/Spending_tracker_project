@@ -1,12 +1,16 @@
 <h1>Tags</h1>
-<a href="/tags/new">Create</a>
+
+<div class="centre">
+  <a href="/tags/new">New Tag</a>
+</div>
+
 <table>
   <% @tags.each do |tag| %>
   <tr>
     <td><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
     <td><%= tag.total_spent %></td>
-  
-    <td><a href="/tags/<%= tag.id %>/newtrans">Add new transaction from existing merchant</a></td>
+
+    <td><a href="/tags/<%= tag.id %>/newtrans">+Transaction+</a></td>
 
   </tr>
   <% end %>

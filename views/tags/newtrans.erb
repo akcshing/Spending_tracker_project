@@ -2,26 +2,24 @@
 
 <form class="" action="/tags/<%= @tag.id %>/newtrans" method="post">
 
-  <label for="transaction-amount-field"> Amount: £
-    <input type="number" step="0.01" name="amount" id = "transaction-amount-field" required>
-  </label>
-
-
   <input type="hidden" name="tag_id" value="<%= @tag.id %>">
-  <p><%= @tag.name %></p>
 
 
+  <div class="centre">
+    <%= @tag.name %>
+    <select class="" name="merchant_id" required>
+      <% @merchants.each do |merchant| %>
+      <option value="<%= merchant.id %>"><%= merchant.name %></option>
+      <% end %>
+    </select>
+    <a href="/tags/<%= @tag.id %>/newmerch">new merchant</a>
+  </div>
 
-
-  <select class="" name="merchant_id" required>
-    <% @merchants.each do |merchant| %>
-    <option value="<%= merchant.id %>"><%= merchant.name %></option>
-    <% end %>
-  </select>
-
-
-  <a href="/tags/<%= @tag.id %>/newmerch">new merchant</a>
-
-  <button type="submit" name="button">Add Transaction</button>
+    <div class="centre">
+      <label for="transaction-amount-field"> Amount: £
+        <input type="number" step="0.01" name="amount" id = "transaction-amount-field" required>
+      </label>
+        <button type="submit" name="button">Add Transaction</button>
+    </div>
 
 </form>

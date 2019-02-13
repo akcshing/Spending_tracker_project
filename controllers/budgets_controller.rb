@@ -28,6 +28,7 @@ post "/budgets" do
   @tag.update()
     @overall_budget = Budget.find(1)
     @tags = Budget.tags
+    @total = Transaction.total
     erb (:"budgets/index")
 end
 

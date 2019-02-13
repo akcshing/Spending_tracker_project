@@ -1,0 +1,56 @@
+body {
+  font-size: 20px;
+  font-family: sans-serif;
+  background-color: #212D40;
+  color: lightgrey;
+}
+
+nav   {
+
+
+}
+
+nav li {
+  margin-top: 10px;
+}
+
+main {
+  margin-top: 20px;
+  padding-left: 30px;
+  margin-left:20px;
+  width:600px;
+
+  border-left-style: solid;
+}
+
+div {
+
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: lightgrey;
+}
+
+.inline-block{
+  display: inline-block;
+}
+
+.centre {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+div.centre {
+  font-size: 20px;
+}
+
+div.right {
+  font-style: bold;
+}
