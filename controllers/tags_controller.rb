@@ -35,6 +35,7 @@ post "/tags/newmerch" do   # wow that worked?
   Transaction.new({"tag_id"=>params["tag_id"], "merchant_id"=>@merchant.id}).save()
   @tag = Tag.find(params["tag_id"])   #abstract relation to its own table?
   @merchants = @tag.merchants.reverse
+  @total = Transaction.total
   erb (:"tags/newtrans")
 
   # redirect to "/tags/#{params["tag_id"]}/newtrans"   # REDIRECT TROUBLE
