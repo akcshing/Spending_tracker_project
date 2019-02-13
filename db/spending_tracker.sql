@@ -32,5 +32,5 @@ CREATE TABLE transactions (
   amount DECIMAL(8,2), -- 5 bytes, 2 decimal places
   merchant_id INT4 REFERENCES merchants(id) ON DELETE CASCADE,
   tag_id INT4 REFERENCES tags(id) ON DELETE CASCADE,
-  time_stamp TIMESTAMP DEFAULT NOW()
+  time_stamp TIMESTAMP DEFAULT NOW()::timestamp(0)
 );
