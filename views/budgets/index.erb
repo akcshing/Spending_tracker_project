@@ -2,9 +2,10 @@
 <div class="centre">
   <a href="/budgets/new" class="click">Add New Budget</a>
   <a class="click" href="/budgets/overall/edit">Overall Budget</a>
-
 </div>
-<table>
+
+
+<table id="table_set_width">
   <tr>
     <td></td>
     <td>Spent</td>
@@ -12,14 +13,14 @@
   </tr>
   <tr>
     <td>Total</td>
-    <td><%= @total %></td>
-    <td><%=@overall_budget.amount%></td>
+    <td class="number"><%= @total %></td>
+    <td class="number"><%=@overall_budget.amount%></td>
   </tr>
   <% @tags.each do |tag| %>
   <tr>
     <td class="click"><a href="/tags/<%= tag.id %>"><%= tag.name%></a></td>
-    <td><%= tag.total_spent %></td>
-    <td class="click"><a href="/budgets/<%= tag.budget.id %>/edit"><%= tag.budget.amount %></a></td>
+    <td class="number"><%= tag.total_spent %></td>
+    <td class="click number"><a href="/budgets/<%= tag.budget.id %>/edit"><%= tag.budget.amount %></a></td>
   </tr>
   <% end %>
 </table>
