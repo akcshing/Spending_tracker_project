@@ -5,8 +5,14 @@ require_relative("../models/budget.rb")
 # require_relative("../models/budget_relation.rb")
 require("pry")
 
+# Transaction.delete_all
+# Tag.delete_all
+# Budget.delete_all
+# Merchant.delete_all
+
 overall_budget = Budget.new({"amount"=>nil, "time_frame"=>nil})
 overall_budget.save
+#
 # budget_1 = Budget.new({"amount"=>50.00, "time_frame"=>"week"})
 # budget_1.save()
 #

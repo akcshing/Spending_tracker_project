@@ -31,5 +31,5 @@ td.number {
 }
 
 #table_set_width {
-  width:300px;
+  min-width: 300px;
 }

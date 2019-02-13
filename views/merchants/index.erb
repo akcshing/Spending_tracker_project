@@ -10,7 +10,7 @@
     <% @merchants.each do |merchant| %>
     <tr>
       <td class="click"><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
-      <td class="number"><%= merchant.total %></td>
+      <td class="number"><%= sprintf "%.2f", merchant.total %></td>
     </tr>
 
     <% end %>

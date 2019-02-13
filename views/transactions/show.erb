@@ -2,7 +2,7 @@
 
 <table class="centre">
   <tr>
-    <td>£<%= @transaction.amount %></td>
+    <td>£<%=sprintf "%.2f",  @transaction.amount %></td>
     <td><%= @transaction.tag.name %></td>
     <td><%= @transaction.merchant.name %></td>
     <td><%= @transaction.time_stamp %></td>

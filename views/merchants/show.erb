@@ -1,4 +1,4 @@
-<h1><%= @merchant.name %>: Spent £<%= @merchant_total %></h1>
+<h1><%= @merchant.name %>: Spent £<%=sprintf "%.2f", @merchant_total %></h1>
 
 <div class="centre">
   <a href="/merchants/<%=@merchant.id%>/edit" class = "click">Edit name</a>
@@ -17,7 +17,7 @@
   </tr>
   <% @merchant_transactions.each do |transaction| %>
   <tr>
-    <td class="click"><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
+    <td class="click"><a href="/transactions/<%=transaction.id%>"><%= sprintf "%.2f", transaction.amount%></a></td>
     <td class="click"><a href="/tags/<%= transaction.tag.id %>"><%= transaction.tag.name%></a></td>
     <td><%= transaction.time_stamp %></td>
   </tr>

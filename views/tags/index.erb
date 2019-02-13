@@ -4,11 +4,11 @@
   <a href="/tags/new" class="click">New Tag</a>
 </div>
 
-<table>
+<table id="table_set_width">
   <% @tags.each do |tag| %>
   <tr>
     <td class="click"><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
-    <td class="number"><%= tag.total_spent %></td>
+    <td class="number"><%= sprintf "%.2f", tag.total_spent %></td>
 
     <td class="click link"><a href="/tags/<%= tag.id %>/newtrans">New Transaction</a></td>
 

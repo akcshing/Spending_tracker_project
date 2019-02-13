@@ -8,7 +8,7 @@ class Budget
 
   def initialize ( budget )
     @id = budget["id"].to_i if budget["id"]
-    @amount = budget["amount"]
+    @amount = budget["amount"].to_f
     @time_frame = budget["time_frame"] # must be "day", "week", or "month"
   end
 

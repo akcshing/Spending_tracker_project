@@ -16,6 +16,7 @@ get "/budgets" do
 end
 
 get "/budgets/new" do
+  @total = Transaction.total
   @tags = Budget.tags_no_budget
   erb (:"budgets/new")
 end
@@ -33,15 +34,18 @@ post "/budgets" do
 end
 
 get "/budgets/overall/edit" do
+  @total = Transaction.total
   erb (:"budgets/overall_edit")
 end
 
 get "/budgets/:id" do
+  @total = Transaction.total
   @budget = Budget.find(params["id"])
   erb (:"budgets/show")
 end
 
 get "/budgets/:id/edit" do
+  @total = Transaction.total
   @budget = Budget.find(params["id"])
   @tag = @budget.tag
   erb(:"budgets/edit")

@@ -14,7 +14,7 @@
     </tr>
     <% @transactions.each do |transaction| %>
     <tr>
-      <td class= "click number"><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
+      <td class= "click number"><a href="/transactions/<%=transaction.id%>"><%= sprintf "%.2f", transaction.amount%></a></td>
       <td class= "click"><a href="/tags/<%= transaction.tag.id %>""><%= transaction.tag.name%></a></td>
       <td class= "click"><a href="/merchants/<%= transaction.merchant.id %>"><%= transaction.merchant.name%></a></td>
       <td><%= transaction.time_stamp %></td>
