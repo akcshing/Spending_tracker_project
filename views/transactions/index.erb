@@ -12,7 +12,7 @@
     <% @transactions.each do |transaction| %>
     <tr>
       <td><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
-      <td><%= transaction.tag.name%></td>
+      <td><a href="/tags/<%= transaction.tag.id %>""><%= transaction.tag.name%></a></td>
       <td><%= transaction.merchant.name%></td>
       <td><%= transaction.time_stamp %></td>
     </tr>
