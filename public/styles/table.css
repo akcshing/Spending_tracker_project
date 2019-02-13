@@ -6,10 +6,19 @@ table {
 
 }
 
+tr {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 tr:nth-child(odd) {
-    background-color: #364156;
+  background-color: #7D4E57;
 }
 
 td {
   padding: 5px;
+}
+
+td.link {
+  text-align: center;
 }
