@@ -2,7 +2,7 @@
 
 <form class="" action="/budgets" method="post">
   <div class="centre">
-    <label for="tag_id">Select a tag:
+    <label for="tag_id">Select a Tag:
       <select class="" name="tag_id">
         <% @tags.each do |tag| %>
         <option value="<%= tag.id %>"><%= tag.name %></option>
@@ -11,7 +11,7 @@
     </label>
   </div>
   <div class="centre">
-    <label for="budget-amount-field"> £:
+    <label for="budget-amount-field"> £
       <input type="number" step="0.01" name="amount" id = "budget-name-field" required>
     </label>
       <button type="submit" name="button">Add Budget</button>

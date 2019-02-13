@@ -3,12 +3,15 @@
   <a href="/merchants/new" class="click">New Merchant</a>
 </div>
 
-<table>
-  <% @merchants.each do |merchant| %>
-  <tr>
-    <td class="click"><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
-    <td class="number"><%= merchant.total %></td>
-  </tr>
 
-  <% end %>
-</table>
+
+
+  <table id="merchants_table">
+    <% @merchants.each do |merchant| %>
+    <tr>
+      <td class="click"><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
+      <td class="number"><%= merchant.total %></td>
+    </tr>
+
+    <% end %>
+  </table>

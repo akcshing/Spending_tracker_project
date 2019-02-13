@@ -37,7 +37,7 @@ main {
   width:600px;
 
 
-  border-left-style: solid;
+  /* border-left-style: solid; */
   border-left-width:1px;
 }
 

@@ -1,18 +1,22 @@
 <h1>Transactions</h1>
 
-<form class="" action="/tags/<%= @tag.id %>/newtrans" method="post">
+<form class="centre" action="/tags/<%= @tag.id %>/newtrans" method="post">
 
   <input type="hidden" name="tag_id" value="<%= @tag.id %>">
 
 
   <div class="centre">
+
     <%= @tag.name %>
+
     <select class="" name="merchant_id" required>
       <% @merchants.each do |merchant| %>
       <option value="<%= merchant.id %>"><%= merchant.name %></option>
       <% end %>
     </select>
-    <a href="/tags/<%= @tag.id %>/newmerch">new merchant</a>
+
+    <a class = "click" href="/tags/<%= @tag.id %>/newmerch">New merchant</a>
+
   </div>
 
     <div class="centre">

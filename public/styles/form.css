@@ -7,6 +7,10 @@ form div {
   margin-top: 30px;
 }
 
+label {
+  font-size:18px;
+}
+
 select {
 
   font-size: 18px;
@@ -14,5 +18,24 @@ select {
 
 input {
   font-size: 18px;
-  text-align: center;
+  text-align: left;
+  border-radius: 5px;
+}
+
+input[type=submit] {
+    padding:5px 15px;
+    background:#ccc;
+    border-radius: 5px;
+}
+
+button[type=submit] {
+    padding:2px 15px;
+    background:#ccc;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+#transaction-amount-field {
+  width: 100px;
+  text-align: right;
 }

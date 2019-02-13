@@ -1,6 +1,8 @@
 <h1>Budgets</h1>
 <div class="centre">
   <a href="/budgets/new" class="click">Add New Budget</a>
+  <a class="click" href="/budgets/overall/edit">Overall Budget</a>
+
 </div>
 <table>
   <tr>
@@ -12,7 +14,6 @@
     <td>Total</td>
     <td><%= @total %></td>
     <td><%=@overall_budget.amount%></td>
-    <td><a href="/budgets/overall/edit"class="click">Change Overall Budget</a></td>
   </tr>
   <% @tags.each do |tag| %>
   <tr>
