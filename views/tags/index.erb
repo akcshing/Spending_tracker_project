@@ -1,16 +1,16 @@
 <h1>Tags</h1>
 
 <div class="centre">
-  <a href="/tags/new">New Tag</a>
+  <a href="/tags/new" class="click">New Tag</a>
 </div>
 
 <table>
   <% @tags.each do |tag| %>
   <tr>
-    <td><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
-    <td><%= tag.total_spent %></td>
+    <td class="click"><a href="/tags/<%= tag.id %>"><%= tag.name %></a></td>
+    <td class="number"><%= tag.total_spent %></td>
 
-    <td class="link"><a href="/tags/<%= tag.id %>/newtrans">New Transaction</a></td>
+    <td class="click link"><a href="/tags/<%= tag.id %>/newtrans">New Transaction</a></td>
 
   </tr>
   <% end %>

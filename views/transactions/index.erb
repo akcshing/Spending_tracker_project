@@ -1,7 +1,7 @@
 <h1>Transactions</h1>
 
   <div class="centre">
-    <a href="/transactions/new">Add New</a>
+    <a href="/transactions/new" class="click">Add New</a>
   </div>
 
 <div class="">
@@ -14,9 +14,9 @@
     </tr>
     <% @transactions.each do |transaction| %>
     <tr>
-      <td><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
-      <td><a href="/tags/<%= transaction.tag.id %>""><%= transaction.tag.name%></a></td>
-      <td><%= transaction.merchant.name%></td>
+      <td class= "click number"><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
+      <td class= "click"><a href="/tags/<%= transaction.tag.id %>""><%= transaction.tag.name%></a></td>
+      <td class= "click"><a href="/merchants/<%= transaction.merchant.id %>"><%= transaction.merchant.name%></a></td>
       <td><%= transaction.time_stamp %></td>
     </tr>
     <% end %>

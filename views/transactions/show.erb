@@ -1,14 +1,18 @@
-<h1>Transactions</h1>
+<h1>Transaction</h1>
 
 <table>
   <tr>
     <td>£<%= @transaction.amount %></td>
     <td><%= @transaction.tag.name %></td>
     <td><%= @transaction.merchant.name %></td>
+    <td><%= @transaction.time_stamp %></td>
   </tr>
 </table>
 
-<a href="/transactions/<%=@transaction.id%>/edit">Edit</a>
-<form class="" action="/transactions/<%= @transaction.id %>/delete" method="post">
+<div class="centre">
+  <a href="/transactions/<%=@transaction.id%>/edit">Edit</a>
+</div>
+
+<form class="centre" action="/transactions/<%= @transaction.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>

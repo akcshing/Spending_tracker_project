@@ -1,13 +1,13 @@
 <h1>Merchants</h1>
 <div class="centre">
-  <a href="/merchants/new">New Merchant</a>
+  <a href="/merchants/new" class="click">New Merchant</a>
 </div>
 
 <table>
   <% @merchants.each do |merchant| %>
   <tr>
-    <td><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
-    <td><%= merchant.total %></td>
+    <td class="click"><a href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></td>
+    <td class="number"><%= merchant.total %></td>
   </tr>
 
   <% end %>

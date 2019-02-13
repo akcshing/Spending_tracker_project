@@ -1,6 +1,6 @@
 <h1>Budgets</h1>
 <div class="centre">
-  <a href="/budgets/new">Add New Budget</a>
+  <a href="/budgets/new" class="click">Add New Budget</a>
 </div>
 <table>
   <tr>
@@ -12,13 +12,13 @@
     <td>Total</td>
     <td><%= @total %></td>
     <td><%=@overall_budget.amount%></td>
-    <td><a href="/budgets/overall/edit">Change Overall Budget</a></td>
+    <td><a href="/budgets/overall/edit"class="click">Change Overall Budget</a></td>
   </tr>
   <% @tags.each do |tag| %>
   <tr>
-    <td><a href="/tags/<%= tag.id %>"><%= tag.name%></a></td>
+    <td class="click"><a href="/tags/<%= tag.id %>"><%= tag.name%></a></td>
     <td><%= tag.total_spent %></td>
-    <td><a href="/budgets/<%= tag.budget.id %>/edit"><%= tag.budget.amount %></a></td>
+    <td class="click"><a href="/budgets/<%= tag.budget.id %>/edit"><%= tag.budget.amount %></a></td>
   </tr>
   <% end %>
 </table>

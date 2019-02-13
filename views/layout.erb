@@ -15,16 +15,17 @@
 
     <nav class="inline-block">
       <ul>
-        <li><a href="/tags">Tags</a></li>
-        <li><a href="/merchants">Merchants</a></li>
-        <li><a href="/transactions">Transactions</a></li>
-        <li><a href="/budgets">Budgets</a></li>
+      <a href="/tags"><li class="click">Tags</li></a>
+      <a href="/merchants"><li class="click">Merchants</li></a>
+      <a href="/transactions"><li class="click">Transactions</li></a>
+      <a href="/budgets"><li class="click">Budgets</li></a>
       </ul>
     </nav>
 
     <main class="inline-block">
-      <div class="right">Total Spendings: <%= @total %></div>
-      <div class="right">Budget warnings:  </div>
+      <div id="layout_info" class="right">Total Spendings: <%= @total %></div>
+      <div id="layout_info" class="right">Budget warnings:  </div>
+      
 
         <%= yield %>
 

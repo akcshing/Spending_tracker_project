@@ -10,30 +10,32 @@ body {
 a {
   text-decoration-line: none;
 
-  background-color: rgba(255,255,255,.1);
   /* opacity: 0.5; */
-  padding:5px;
-  border-radius:4px;
 }
+
 
 nav   {
 
 
 }
 
-nav li {
+li {
   margin-top: 10px;
+  display: block;
 }
 
 ul {
   list-style: none;
+  width: 150px;
 }
 
 main {
   margin-top: 20px;
   padding-left: 30px;
   margin-left:20px;
+  padding-bottom: 100px;
   width:600px;
+
 
   border-left-style: solid;
   border-left-width:1px;
@@ -44,11 +46,22 @@ div {
 }
 
 h1 {
+
   text-align: center;
 }
 
 a {
   color: lightgrey;
+}
+
+.click {
+  background-color: rgba(255,255,255,.1);
+  padding:5px;
+  border-radius:4px;
+}
+
+.click:hover {
+    background-color: rgba(255,255,255,.2);
 }
 
 .inline-block{
@@ -69,4 +82,5 @@ div.centre {
 
 div.right {
   font-style: bold;
+  font-size: 24px;
 }

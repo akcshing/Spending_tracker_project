@@ -1,15 +1,14 @@
-<h1>Merchants</h1>
-<h2><%= @merchant.name %></h2>
-<a href="/merchants/<%=@merchant.id%>/edit">Edit</a>
+<h1><%= @merchant.name %>: Spent £<%= @merchant_total %></h1>
 
-<form class="" action="/merchants/<%= @merchant.id %>/delete" method="post">
+<div class="centre">
+  <a href="/merchants/<%=@merchant.id%>/edit" class = "click">Edit name</a>
+</div>
+
+<form class="centre" action="/merchants/<%= @merchant.id %>/delete" method="post">
   <input type="submit" value="Delete">
 </form>
 
-<h2><%= @merchant_total %></h2>
-
-
-<h3>Transactions</h3>
+<h2 class="centre">Transactions</h2>
 <table>
   <tr>
     <td>Amount</td>
@@ -18,8 +17,8 @@
   </tr>
   <% @merchant_transactions.each do |transaction| %>
   <tr>
-    <td><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
-    <td><a href="/tags/<%= transaction.tag.id %>"><%= transaction.tag.name%></a></td>
+    <td class="click"><a href="/transactions/<%=transaction.id%>"><%= transaction.amount%></a></td>
+    <td class="click"><a href="/tags/<%= transaction.tag.id %>"><%= transaction.tag.name%></a></td>
     <td><%= transaction.time_stamp %></td>
   </tr>
   <% end %>
